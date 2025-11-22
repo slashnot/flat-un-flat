@@ -12,7 +12,11 @@ function l(e, r = "", t = {}) {
   }
   return t;
 }
-function u(e, r = ".") {
+const u = (e, r = { preserveArrays: !1 }) => {
+  const { preserveArrays: t } = r;
+  return t ? l(e) : i(e);
+};
+function y(e, r = ".") {
   const t = {};
   for (const n in e) {
     const c = n.split(r);
@@ -23,12 +27,8 @@ function u(e, r = ".") {
   }
   return t;
 }
-const y = (e, r = { preserveArrays: !1 }) => {
-  const { preserveArrays: t } = r;
-  return t ? l(e) : i(e);
-};
 export {
-  y as flattenObject,
-  u as unflattenObject
+  u as flattenObject,
+  y as unflattenObject
 };
-//# sourceMappingURL=flattenUnflatten.js.map
+//# sourceMappingURL=flat-un-flat.js.map

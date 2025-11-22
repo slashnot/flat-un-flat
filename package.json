@@ -22,28 +22,20 @@
   ],
   "license": "MIT",
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./dist/flat-un-flat.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./flatten": {
-      "import": "./dist/flatten.js",
-      "types": "./dist/flatten.d.ts"
-    },
-    "./unflatten": {
-      "import": "./dist/unflatten.js",
-      "types": "./dist/unflatten.d.ts"
-    },
-    "./types": {
-      "import": "./dist/types.js",
-      "types": "./dist/types.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": {
+        "production": "./dist/flat-un-flat.js",
+        "default": "./index.js"
+      }
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "index.js"
   ],
   "scripts": {
     "dev": "vite",
@@ -56,7 +48,8 @@
   "packageManager": "pnpm@10.23.0",
   "devDependencies": {
     "typescript": "~5.9.3",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
     "gh-pages": "^6.3.0"

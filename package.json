@@ -1,6 +1,6 @@
 {
   "name": "@slashnot84/flatten-un-flatten",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lightweight library to flatten and unflatten nested objects with separator or dot-notation keys",
   "author": "Ramkumar K",
   "email": "slashnot84@gmail.com",

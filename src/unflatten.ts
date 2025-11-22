@@ -41,5 +41,41 @@ export function unflattenObject(flatObj: FlatObject, separator: string = '.'): N
         });
     }
 
-    return unflattened;
+    // Convert objects with consecutive numeric keys starting from 0 into arrays
+    return convertToArrays(unflattened);
+}
+
+/**
+ * Helper function to recursively convert objects with consecutive numeric keys into arrays
+ */
+function convertToArrays(obj: any): any {
+    if (obj === null || typeof obj !== 'object') {
+        return obj;
+    }
+
+    // First, recursively process all nested objects
+    for (const key in obj) {
+        obj[key] = convertToArrays(obj[key]);
+    }
+
+    // Check if this object should be converted to an array
+    const keys = Object.keys(obj);
+    
+    // Check if all keys are numeric and consecutive starting from 0
+    if (keys.length > 0) {
+        const numericKeys = keys.map(k => parseInt(k, 10));
+        const allNumeric = numericKeys.every((num, idx) => !isNaN(num) && keys[idx] === String(num));
+        
+        if (allNumeric) {
+            numericKeys.sort((a, b) => a - b);
+            const isConsecutive = numericKeys.every((num, idx) => num === idx);
+            
+            if (isConsecutive && numericKeys[0] === 0) {
+                // Convert to array
+                return numericKeys.map(i => obj[String(i)]);
+            }
+        }
+    }
+
+    return obj;
 }

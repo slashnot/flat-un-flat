@@ -48,10 +48,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "predeploy": "pnpm run build",
+    "deploy": "npx gh-pages -d dist",
     "preview": "vite preview"
   },
+  "packageManager": "pnpm@10.23.0",
   "devDependencies": {
     "typescript": "~5.9.3",
     "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

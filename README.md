@@ -3,7 +3,6 @@
 A lightweight, TypeScript-first library for flattening and unflattening nested objects with dot-notation or custom separators. Perfect for handling complex data structures in configuration files, APIs, and data transformation pipelines.
 
 [![npm version](https://img.shields.io/npm/v/flat-un-flat.svg)](https://www.npmjs.com/package/flat-un-flat)
-[![license](https://img.shields.io/npm/l/flat-un-flat.svg)](LICENSE)
 [![typescript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
 
 ## Features

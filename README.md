@@ -1,4 +1,4 @@
-# flatten-un-flatten
+# flat-un-flat
 
 A lightweight, TypeScript-first library for flattening and unflattening nested objects with dot-notation or custom separators. Perfect for handling complex data structures in configuration files, APIs, and data transformation pipelines.
 
@@ -18,11 +18,11 @@ A lightweight, TypeScript-first library for flattening and unflattening nested o
 ## Installation
 
 ```bash
-npm install flatten-un-flatten
+npm install flat-un-flat
 # or
-pnpm add flatten-un-flatten
+pnpm add flat-un-flat
 # or
-yarn add flatten-un-flatten
+yarn add flat-un-flat
 ```
 
 ## Quick Start
@@ -30,7 +30,7 @@ yarn add flatten-un-flatten
 ### Flatten Objects
 
 ```typescript
-import { flattenObject } from 'flatten-un-flatten';
+import { flattenObject } from 'flat-un-flat';
 
 const nested = {
   user: {
@@ -58,7 +58,7 @@ const flat = flattenObject(nested);
 ### Unflatten Objects
 
 ```typescript
-import { unflattenObject } from 'flatten-un-flatten';
+import { unflattenObject } from 'flat-un-flat';
 
 const flat = {
   'user.name': 'John Doe',
@@ -84,7 +84,7 @@ const nested = unflattenObject(flat);
 When you have arrays in your nested object and want to keep them as values instead of flattening further:
 
 ```typescript
-import { flattenObjectWithArray } from 'flatten-un-flatten';
+import { flattenObjectWithArray } from 'flat-un-flat';
 
 const nested = {
   config: {
@@ -108,7 +108,7 @@ const flat = flattenObjectWithArray(nested);
 ### Custom Separators
 
 ```typescript
-import { unflattenObject } from 'flatten-un-flatten';
+import { unflattenObject } from 'flat-un-flat';
 
 const flat = {
   'user__name': 'John Doe',
@@ -174,7 +174,7 @@ Unflattens a flat object with dot-notation or custom separator keys back into a 
 This library is built with TypeScript and provides complete type definitions:
 
 ```typescript
-import type { FlatObject, NestedObject } from 'flatten-un-flatten/types';
+import type { FlatObject, NestedObject } from 'flat-un-flat/types';
 
 const myObject: NestedObject = { /* ... */ };
 const flattened: FlatObject = flattenObject(myObject);
@@ -206,7 +206,7 @@ MIT © [Ramkumar K](https://github.com/slashnot)
 **Ramkumar K**
 - GitHub: [@slashnot](https://github.com/slashnot)
 - Email: slashnot84@gmail.com
-- Homepage: [https://slashnot.github.io/flatten-un-flatten/](https://slashnot.github.io/flatten-un-flatten/)
+- Homepage: [https://slashnot.github.io/flat-un-flat/](https://slashnot.github.io/flat-un-flat/)
 
 ## Changelog
 

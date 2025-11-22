@@ -1,0 +1,57 @@
+{
+  "name": "flatten-un-flatten",
+  "version": "0.0.1",
+  "description": "A lightweight library to flatten and unflatten nested objects with separator or dot-notation keys",
+  "author": "Ramkumar K",
+  "email": "slashnot84@gmail.com",
+  "homepage": "https://slashnot.github.io/flatten-un-flatten/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slashnot/flatten-un-flatten.git"
+  },
+  "bugs": {
+    "url": "https://github.com/slashnot/flatten-un-flatten/issues"
+  },
+  "keywords": [
+    "flatten",
+    "unflatten",
+    "object",
+    "nested",
+    "dot-notation",
+    "typescript"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./flatten": {
+      "import": "./dist/flatten.js",
+      "types": "./dist/flatten.d.ts"
+    },
+    "./unflatten": {
+      "import": "./dist/unflatten.js",
+      "types": "./dist/unflatten.d.ts"
+    },
+    "./types": {
+      "import": "./dist/types.js",
+      "types": "./dist/types.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  }
+}

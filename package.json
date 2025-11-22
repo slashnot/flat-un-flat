@@ -1,16 +1,16 @@
 {
-  "name": "@slashnot84/flatten-un-flatten",
+  "name": "flat-un-flat",
   "version": "0.0.2",
   "description": "A lightweight library to flatten and unflatten nested objects with separator or dot-notation keys",
   "author": "Ramkumar K",
   "email": "slashnot84@gmail.com",
-  "homepage": "https://slashnot.github.io/flatten-un-flatten/",
+  "homepage": "https://slashnot.github.io/flat-un-flat/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/slashnot/flatten-un-flatten.git"
+    "url": "https://github.com/slashnot/flat-un-flat.git"
   },
   "bugs": {
-    "url": "https://github.com/slashnot/flatten-un-flatten/issues"
+    "url": "https://github.com/slashnot/flat-un-flat/issues"
   },
   "keywords": [
     "flatten",

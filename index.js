@@ -1,1 +1,1 @@
-export * from './src/main';
+export { flattenObject, unflattenObject } from './src/main';

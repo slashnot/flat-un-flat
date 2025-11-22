@@ -84,7 +84,7 @@ const nested = unflattenObject(flat);
 When you have arrays in your nested object and want to keep them as values instead of flattening further:
 
 ```typescript
-import { flattenObjectWithArray } from 'flat-un-flat';
+import { flattenObject } from 'flat-un-flat';
 
 const nested = {
   config: {
@@ -96,7 +96,7 @@ const nested = {
   }
 };
 
-const flat = flattenObjectWithArray(nested);
+const flat = flattenObject(nested, {preserveArrays: true});
 // Result:
 // {
 //   'config.servers': ['server1', 'server2', 'server3'],
@@ -128,27 +128,15 @@ const nested = unflattenObject(flat, '__');
 
 ## API Reference
 
-### `flattenObject(obj, parentKey?, flatObj?)`
+### `flattenObject(obj, options)`
 
 Flattens a nested object into a single-level object with dot-notation keys. Does not preserve arrays.
 
 **Parameters:**
 - `obj: NestedObject` - The nested object to flatten
-- `parentKey?: string` - (Optional) Parent key prefix for nested properties (default: `''`)
-- `flatObj?: FlatObject` - (Optional) Accumulator object for flattened properties (default: `{}`)
+- `options: {preserveArrays: boolean}` - `preserveArrays: true` Flattens a nested object while preserving arrays as values without further flattening.
 
 **Returns:** `FlatObject` - A flattened object with dot-notation keys
-
-### `flattenObjectWithArray(obj, parentKey?, flatObj?)`
-
-Flattens a nested object while preserving arrays as values without further flattening.
-
-**Parameters:**
-- `obj: NestedObject` - The nested object to flatten
-- `parentKey?: string` - (Optional) Parent key prefix for nested properties (default: `''`)
-- `flatObj?: FlatObject` - (Optional) Accumulator object for flattened properties (default: `{}`)
-
-**Returns:** `FlatObject` - A flattened object with dot-notation keys and preserved arrays
 
 ### `unflattenObject(flatObj, separator?)`
 

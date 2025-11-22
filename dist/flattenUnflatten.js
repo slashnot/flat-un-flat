@@ -1,34 +1,34 @@
-function f(e, c = "", t = {}) {
+function i(e, r = "", t = {}) {
   for (const n in e) {
-    const r = c ? `${c}.${n}` : n;
-    typeof e[n] == "object" && e[n] !== null ? f(e[n], r, t) : t[r] = e[n];
+    const c = r ? `${r}.${n}` : n;
+    typeof e[n] == "object" && e[n] !== null ? i(e[n], c, t) : t[c] = e[n];
   }
   return t;
 }
-function i(e, c = "", t = {}) {
+function l(e, r = "", t = {}) {
   for (const n in e) {
-    const r = c ? `${c}.${n}` : n;
-    Array.isArray(e[n]) ? t[r] = e[n] : typeof e[n] == "object" && e[n] !== null ? i(e[n], r, t) : t[r] = e[n];
+    const c = r ? `${r}.${n}` : n;
+    Array.isArray(e[n]) ? t[c] = e[n] : typeof e[n] == "object" && e[n] !== null ? l(e[n], c, t) : t[c] = e[n];
   }
   return t;
 }
-function o(e) {
-  const c = {};
-  for (const t in e) {
-    const n = t.split(".");
-    let r = c;
-    n.forEach((s, l) => {
-      l === n.length - 1 ? r[s] = e[t] : (r[s] || (r[s] = {}), r = r[s]);
+function u(e, r = ".") {
+  const t = {};
+  for (const n in e) {
+    const c = n.split(r);
+    let s = t;
+    c.forEach((f, o) => {
+      o === c.length - 1 ? s[f] = e[n] : (s[f] || (s[f] = {}), s = s[f]);
     });
   }
-  return c;
+  return t;
 }
-const u = (e, c = { preserverArrays: !1 }) => {
-  const { preserverArrays: t } = c;
-  return t ? i(e) : f(e);
+const y = (e, r = { preserveArrays: !1 }) => {
+  const { preserveArrays: t } = r;
+  return t ? l(e) : i(e);
 };
 export {
-  u as flattenObject,
-  o as unflattenObject
+  y as flattenObject,
+  u as unflattenObject
 };
 //# sourceMappingURL=flattenUnflatten.js.map
